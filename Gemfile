@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -24,6 +24,9 @@ gem 'coffee-rails', '~> 4.2'
 gem "react-rails"
 
 gem 'faker'
+
+#Authentication Gem: Devise
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
