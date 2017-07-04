@@ -13,6 +13,9 @@
     <div class="container">
       <p class = "alert"><%= alert %></p>
       <%= yield %>
+      <% if user_signed_in? %>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+      <% end %>
     </div>
 
   </body>
