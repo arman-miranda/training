@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @department.name %>
 </p>
-<table style = "width: 100%">
+<table>
   <thead>
     <tr>
       <th>Last Name</th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= list_all_users.html_safe %>
+    <%= list_all_users(@department).html_safe %>
   </tbody>
 </table>
 
