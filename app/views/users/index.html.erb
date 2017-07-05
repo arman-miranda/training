@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<%= react_component("UserList", users: @users.as_json(include: :department)) %>
+<%= react_component("UserList", users: @users.includes(:department).as_json(include: :department)) %>
 
 <br>
 
