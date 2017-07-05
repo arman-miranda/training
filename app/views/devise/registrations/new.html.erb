@@ -26,6 +26,8 @@
     <%= f.email_field :email %>
   </div>
 
+  <hr/>
+
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -40,6 +42,17 @@
     <%= f.label :position %><br />
     <%= f.text_field :position, autofocus: true %>
   </div>
+
+  <div class = "field">
+    <%= f.label :department %> <br />
+    <%= f.select(:department_id) do %>
+      <% Department.all.each do |c| -%>
+      <%= content_tag(:option, c.name, value: c.id)%>
+      <% end %>
+    <% end %>
+  </div>
+
+  <hr />
 
   <div class="actions">
     <%= f.submit "Sign up" %>

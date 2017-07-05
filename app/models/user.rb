@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :department
-  
-  validates :username, presence: true, uniqueness: true
-  validates :email, uniqueness: true
+
+  validates :username, :department_id, presence: true
+  validates :username, :email, uniqueness:true
 
   def email_required?
     false

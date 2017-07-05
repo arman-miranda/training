@@ -4,6 +4,20 @@
   <strong>Name:</strong>
   <%= @department.name %>
 </p>
+<table style = "width: 100%">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= list_all_users.html_safe %>
+  </tbody>
+</table>
+
+<hr />
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>
