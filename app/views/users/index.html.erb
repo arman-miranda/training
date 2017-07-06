@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
-
-<%= react_component("UserList", users: @users.includes(:department).as_json(include: :department)) %>
+<%= search_form_for @q do |f| %>
+  <%= f.label :first_name_or_last_name_or_full_name_cont, "Name" %>
+  <%= f.search_field :first_name_or_last_name_or_full_name_cont %>
+  <%= f.label :position_cont, "Position"%>
+  <%= f.search_field :position_cont %>
+  <%= f.label :department%>
+  <%= f.collection_select :department_id_eq, Department.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
+<%= react_component("UserList", users: @users.as_json(include: :department)) %>
 
 <br>
 
