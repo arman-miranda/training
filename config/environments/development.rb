@@ -62,5 +62,5 @@ Rails.application.configure do
 
   #Paperclip configurations
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  Paperclip.options[:log] = true
+  
 end
