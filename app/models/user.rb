@@ -3,10 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_attached_file :avatar, styles: { thumb: "200x200<" },
+      default_url: "/images/:style/missing.png"
+
   belongs_to :department
+
 
   validates :username, :department_id, presence: true
   validates :username, :email, uniqueness:true
+  validates_attachment :avatar, presence: true,
+      content_type: { content_type: /\Aimage\/.*\z/ },
+      size: { in: 0..2048.kilobytes}
+
 
   def email_required?
     false

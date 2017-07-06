@@ -59,4 +59,8 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.rails_logger = true
   end
+
+  #Paperclip configurations
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:log] = true
 end
