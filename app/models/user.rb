@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_attached_file :avatar, styles: { thumb: "200x200<" },
+  has_attached_file :avatar, styles: { thumb: "200x200>" },
       default_url: "/images/:style/missing.png"
 
   belongs_to :department
