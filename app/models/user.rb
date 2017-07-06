@@ -7,6 +7,7 @@ class User < ApplicationRecord
       default_url: "/images/:style/missing.png"
 
   belongs_to :department
+  has_many :posts
 
 
   validates :username, :department_id, presence: true
