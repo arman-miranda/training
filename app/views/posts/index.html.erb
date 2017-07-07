@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-4">
           <%= image_tag post.user.avatar.url(:thumb) %><br />
-          <%= post.user.first_name %><br />
+          <%= post.user.first_name %> <%= post.user.last_name %><br />
           <%= post.user.department.name%><br />
           Posted at: <%= formatted_post_creation_time(post.created_at) %>
         </div>
