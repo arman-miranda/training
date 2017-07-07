@@ -12,20 +12,15 @@
     <p class = "notice"><%= notice %></p>
     <div class="container">
       <p class = "alert"><%= alert %></p>
-      <% if action_name='sign_in'%>
-        <div>
-      <% else %>
-      <div class="row">
-      <% end %>  
+      <% if user_signed_in? %>
         <div class="col-md-2">
-          <% if user_signed_in? %>
-            <p><%= link_to 'List of Departments', departments_path %></p>
-            <p><%= link_to 'Newsfeed', posts_path %></p>
-            <p><%= link_to 'Go to Users', users_path %></p>
-            <%= button_to 'Logout', destroy_user_session_path,
-              method: :delete %>
-          <% end %>
-        </div>
+          <p><%= link_to 'List of Departments', departments_path %></p>
+          <p><%= link_to 'Newsfeed', posts_path %></p>
+          <p><%= link_to 'Go to Users', users_path %></p>
+          <%= button_to 'Logout', destroy_user_session_path,
+            method: :delete %>
+          </div>
+        <% end %>
         <div class="col-md-10">
           <%= yield %>
         </div>
