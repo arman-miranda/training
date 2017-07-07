@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :username, :department_id, presence: true
   validates :username, :email, uniqueness:true
-  validates_attachment :avatar, presence: true,
+  validates_attachment :avatar,
       content_type: { content_type: /\Aimage\/.*\z/ },
       size: { in: 0..2048.kilobytes}
 
