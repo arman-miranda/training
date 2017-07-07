@@ -1,7 +1,6 @@
 <%= form_for(post) do |f| %>
   <div class="field">
-    <%= f.label :post %>
-    <%= f.text_area :post%>
+    <%= f.text_area :post, placeholder: "What are you thinking about?" %>
   </div>
 
   <div class="actions">
