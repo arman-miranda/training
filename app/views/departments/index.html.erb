@@ -4,7 +4,7 @@
 <hr />
 <%= link_to 'Add New Department', new_department_path %> <br />
 <hr />
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -23,6 +23,7 @@
     <% end %>
   </tbody>
 </table>
+  <%= paginate @departments %>
 <hr />
 <br>
 </div>

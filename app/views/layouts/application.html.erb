@@ -9,21 +9,94 @@
   </head>
 
   <body>
-    <div class = "notice"><%= notice %></div>
+    <div class="notice"><%= notice %></div>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="<%= root_path %>">Staff Listing</a>
+        </div>
+        <div class="navbar-right">
+          <ul class="nav navbar-pills">
+            <li class="dropdown">
+              <%= link_to "#",
+                    class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+                    <span class="glyphicon glyphicon-th">
+                      </span> Dashboard
+              <%end%>
+              <ul class="dropdown-menu">
+                <li class="<%= active_class(edit_user_registration_path) %>">
+                  <%= link_to edit_user_registration_path do %>
+                    <span class="glyphicon glyphicon-pencil">
+                      </span> My Profile
+                  <% end %>
+                </li>
+
+                <li class="<%= active_class(posts_path) %>">
+                  <%= link_to posts_path do %>
+                    <span class="glyphicon glyphicon-comment">
+                    </span> Add a Newsfeed Post
+                  <% end %>
+                </li>
+
+                <li class="<%= active_class(users_path)%>">
+                  <%= link_to users_path do %>
+                    <span class="glyphicon glyphicon-user"></span> All Users
+                  <% end %>
+                </li>
+
+                <li class="<%= active_class(departments_path) %>">
+                  <%= link_to departments_path do %>
+                    <span class="glyphicon glyphicon-briefcase">
+                      </span> All Departments
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
       <p class = "alert"><%= alert %></p>
-      <% if user_signed_in? %>
-        <div class="col-md-2">
-          <p><%= link_to 'List of Departments', departments_path %></p>
-          <p><%= link_to 'Newsfeed', posts_path %></p>
-          <p><%= link_to 'Go to Users', users_path %></p>
-          <%= button_to 'Logout', destroy_user_session_path,
-            method: :delete %>
-          </div>
-        <% end %>
-        <div class="col-md-10">
+        <div class="col-md-9">
           <%= yield %>
         </div>
+
+        <% if user_signed_in? %>
+          <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked" id ="fixed-sidebar">
+              <li class="<%= active_class(posts_path) %>">
+                <%= link_to posts_path, class: "list-group-item" do %>
+                  <span class="glyphicon glyphicon-triangle-right">
+                  </span> Member's Post
+                <% end %>
+              </li>
+              <li class="<%= active_class(users_path) %>">
+                <%= link_to users_path, class: "list-group-item" do %>
+                <span class="glyphicon glyphicon-triangle-right">
+                  </span> See All Users
+                  <% end %>
+              </li>
+              <li class="<%= active_class(departments_path) %>">
+                <%= link_to departments_path, class: "list-group-item" do %>
+                  <span class="glyphicon glyphicon-triangle-right">
+                  </span> List of Departments
+                  <% end %>
+              </li>
+
+              <li>
+                <%= link_to destroy_user_session_path,
+                method: :delete, class: "list-group-item" do %>
+                  <span class="glyphicon glyphicon-off">
+                  </span> Logout
+                <% end %>
+              </li>
+            </ul>
+          </div>
+         <% end %>
       </div>
     </div>
 
