@@ -10,7 +10,7 @@
 
   <body>
     <div class="notice"><%= notice %></div>
-
+    <% if user_signed_in? %>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -58,7 +58,7 @@
         </div>
       </div>
     </nav>
-
+    <% end %>
     <div class="container">
       <p class = "alert"><%= alert %></p>
         <div class="col-md-9">
