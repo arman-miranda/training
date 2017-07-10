@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.all.order(created_at: :desc).includes(:user => :department)
+    @posts = Post.all.order(
+      created_at: :desc).includes(
+        :user => :department).page(
+          params[:page]
+        )
     @post = Post.new
   end
 

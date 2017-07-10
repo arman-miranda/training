@@ -1,0 +1,11 @@
+$("<%=j render(partial: 'posts', object: @posts) %>").appendTo(
+  $(".infinite-post")
+);
+
+<% if @posts.last_page? %>
+  $('.pagination').html('No more posts');
+<% else %>
+  $('.pagination').html(
+    "<%=j link_to_next_page(@posts, 'Load More', remote: true) %>"
+  );
+<% end %>
