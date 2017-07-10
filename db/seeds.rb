@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-(1..50).each do |i|
+(1..5).each  do  |i|
   #Create Departments
   name = Faker::Commerce.department
   Department.create(name: name)
+end
 
-  departments = Department.all
+(1..50).each do |i|
 
   # Create Users
   username   = Faker::Name.unique.name
@@ -20,9 +21,8 @@
   last_name  = Faker::Name.last_name
   email      = Faker::Internet.free_email("#{first_name} #{last_name}")
   position   = Faker::Name.title
-  department_id = departments[rand(departments.length)][:id]
 
-  User.create!(username: username, first_name: first_name, last_name: last_name, email: email, position: position, department_id: department_id, password: password)
+  User.create!(username: username, first_name: first_name, last_name: last_name, email: email, position: position, department: Department.all.sample, password: password)
 
   users = User.all
 
