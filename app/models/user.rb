@@ -10,8 +10,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
 
-  validates :username, :department_id, presence: true
-  validates :username, :email, uniqueness:true
+  validates :username, :first_name, :last_name,
+      :email, :department_id, presence: true
+  validates :username, :email, uniqueness:true, allow_blank: true
   validates_attachment :avatar,
       content_type: { content_type: /\Aimage\/.*\z/ },
       size: { in: 0..2048.kilobytes}

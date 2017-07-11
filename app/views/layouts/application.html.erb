@@ -9,13 +9,12 @@
   </head>
 
   <body>
-    <div class="notice"><%= notice %></div>
-    <% if user_signed_in? %>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="<%= root_path %>">Staff Listing</a>
         </div>
+        <% if user_signed_in? %>
         <div class="navbar-right">
           <ul class="nav navbar-pills">
             <li class="dropdown">
@@ -56,9 +55,12 @@
             <li>
           </ul>
         </div>
+        <% end %>
       </div>
     </nav>
-    <% end %>
+
+    <div class="notice"><%= notice %></div>
+
     <div class="container">
       <p class = "alert"><%= alert %></p>
         <div class="col-md-9">
