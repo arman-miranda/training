@@ -1,6 +1,12 @@
-<h1>Editing Department</h1>
-
-<%= render 'form', department: @department %>
-
-<%= link_to 'Show', @department %> |
-<%= link_to 'Back', departments_path %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to departments_path,
+      class:"btn btn-primary btn-lg" do %>
+      <span class="glyphicon glyphicon-arrow-left"></span>
+    <% end %><br />
+  </div>
+  <div class="col-md-10">
+    <h1>Editing Department</h1>
+    <%= render 'form', department: @department %>
+  </div>
+</div>

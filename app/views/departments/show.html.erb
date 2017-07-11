@@ -1,22 +1,28 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @department.name %>
-</p>
-<table class = "table table-striped">
-  <thead>
-    <tr>
-      <th>Last Name</th>
-      <th>First Name</th>
-      <th>Position</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= list_all_users(@department).html_safe %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to departments_path,
+      class:"btn btn-primary btn-lg" do %>
+      <span class="glyphicon glyphicon-arrow-left"></span>
+    <% end %><br />
+  </div>
 
-<hr />
+  <div class="col-md-10">
+    <div class="page-header">
+      <h4><%= @department.name %> Department</h4>
+    </div>
 
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
+    <table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= list_all_users(@department).html_safe %>
+      </tbody>
+    </table>
+  </div>
+</div>

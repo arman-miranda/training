@@ -1,45 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to users_path,
-  class:"btn btn-primary btn-lg" do %>
-  <span class="glyphicon glyphicon-arrow-left"></span>
-<% end %><br />
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to users_path,
+      class:"btn btn-primary btn-lg" do %>
+      <span class="glyphicon glyphicon-arrow-left"></span>
+    <% end %><br />
+  </div>
 
-<div class="text-center">
-  <%= image_tag @user.avatar.url(:thumb) %>
-</div><br />
-<div class="panel panel-primary text-center">
-  <div class="panel-heading">
-    Name
-  </div>
-  <div class="panel-body">
-    <%= "#{@user.first_name} #{@user.last_name}" %>
-  </div>
-</div>
+  <div class="col-md-10">
+    <div class="text-center">
+      <%= image_tag @user.avatar.url(:thumb) %>
+    </div><br />
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading">
+        Name
+      </div>
+      <div class="panel-body">
+        <%= "#{@user.first_name} #{@user.last_name}" %>
+      </div>
+    </div>
 
-<div class="panel panel-primary text-center">
-  <div class="panel-heading">
-    Email
-  </div>
-  <div class="panel-body">
-    <%= @user.email %>
-  </div>
-</div>
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading">
+        Email
+      </div>
+      <div class="panel-body">
+        <%= @user.email %>
+      </div>
+    </div>
 
-<div class="panel panel-primary text-center">
-  <div class="panel-heading">
-    Position and Department
-  </div>
-  <div class="panel-body">
-    <%= "#{@user.position} under the #{@user.department.name} Department"%>
-  </div>
-</div>
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading">
+        Position and Department
+      </div>
+      <div class="panel-body">
+        <%= "#{@user.position} under the #{@user.department.name} Department"%>
+      </div>
+    </div>
 
-<div class="panel panel-primary text-center">
-  <div class="panel-heading">
-    Total Number of Posts
-  </div>
-  <div class="panel-body">
-    <%= "#{@user.posts.count}"%>
+    <div class="panel panel-primary text-center">
+      <div class="panel-heading">
+        Total Number of Posts
+      </div>
+      <div class="panel-body">
+        <%= "#{@user.posts.count}"%>
+      </div>
+    </div>
   </div>
 </div>
