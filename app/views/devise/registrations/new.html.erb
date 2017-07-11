@@ -47,7 +47,7 @@
         placeholder: "Last Name"%>
     </div>
 
-    <div class = "field">
+    <div class = "form-group">
       <%= f.label :department %>
       <%= f.select(:department_id,
         Department.all.collect{|d| [ d.name, d.id] },
@@ -59,7 +59,7 @@
 <br />
 
 <div class="container text-center">
-  <%= f.submit "Sign up", class:"btn btn-primary" %>
+  <%= f.submit "Sign up", class:"btn btn-primary btn-lg" %>
 </div>
 
 <br/>
