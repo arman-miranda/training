@@ -1,32 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @user.avatar.url(:thumb) %>
+<%= link_to users_path,
+  class:"btn btn-primary btn-lg" do %>
+  <span class="glyphicon glyphicon-arrow-left"></span>
+<% end %><br />
 
+<div class="text-center">
+  <%= image_tag @user.avatar.url(:thumb) %>
+</div><br />
+<div class="panel panel-primary text-center">
+  <div class="panel-heading">
+    Name
+  </div>
+  <div class="panel-body">
+    <%= "#{@user.first_name} #{@user.last_name}" %>
+  </div>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<div class="panel panel-primary text-center">
+  <div class="panel-heading">
+    Email
+  </div>
+  <div class="panel-body">
+    <%= @user.email %>
+  </div>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+<div class="panel panel-primary text-center">
+  <div class="panel-heading">
+    Position and Department
+  </div>
+  <div class="panel-body">
+    <%= "#{@user.position} under the #{@user.department.name} Department"%>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @user.position %>
-</p>
-
-<p>
-  <strong>Department</strong>
-  <%= @user.department.name %>
-</p>
-
-
-<%= link_to 'Back', users_path %>
+<div class="panel panel-primary text-center">
+  <div class="panel-heading">
+    Total Number of Posts
+  </div>
+  <div class="panel-body">
+    <%= "#{@user.posts.count}"%>
+  </div>
+</div>

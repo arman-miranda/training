@@ -25,7 +25,7 @@
               <%end%>
               <ul class="dropdown-menu">
                 <li class="<%= active_class(edit_user_registration_path) %>">
-                  <%= link_to edit_user_registration_path do %>
+                  <%= link_to edit_user_registration_path  do %>
                     <span class="glyphicon glyphicon-pencil">
                       </span> My Profile
                   <% end %>
@@ -71,19 +71,22 @@
           <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked" id ="fixed-sidebar">
               <li class="<%= active_class(posts_path) %>">
-                <%= link_to posts_path, class: "list-group-item" do %>
+                <%= link_to posts_path,
+                  class: "list-group-item list-group-item-info" do %>
                   <span class="glyphicon glyphicon-triangle-right">
                   </span> Member's Post
                 <% end %>
               </li>
               <li class="<%= active_class(users_path) %>">
-                <%= link_to users_path, class: "list-group-item" do %>
+                <%= link_to users_path,
+                class: "list-group-item list-group-item-info" do %>
                 <span class="glyphicon glyphicon-triangle-right">
                   </span> See All Users
                   <% end %>
               </li>
               <li class="<%= active_class(departments_path) %>">
-                <%= link_to departments_path, class: "list-group-item" do %>
+                <%= link_to departments_path,
+                  class: "list-group-item list-group-item-info" do %>
                   <span class="glyphicon glyphicon-triangle-right">
                   </span> List of Departments
                   <% end %>
@@ -91,7 +94,8 @@
 
               <li>
                 <%= link_to destroy_user_session_path,
-                method: :delete, class: "list-group-item" do %>
+                method: :delete,
+                class: "list-group-item list-group-item-danger" do %>
                   <span class="glyphicon glyphicon-off">
                   </span> Logout
                 <% end %>

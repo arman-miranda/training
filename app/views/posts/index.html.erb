@@ -7,5 +7,6 @@
 </div>
 
 <div class="pagination" id="load-more-styling">
-    <%= link_to_next_page(@posts, 'Load More', remote: true) %>
+    <%= link_to_next_page(@posts, 'Load More', remote: true,
+      class: "btn btn-primary btn-lg") %>
 </div>

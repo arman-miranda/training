@@ -6,6 +6,7 @@ $("<%=j render(partial: 'posts', object: @posts) %>").appendTo(
   $('.pagination').html('No more posts');
 <% else %>
   $('.pagination').html(
-    "<%=j link_to_next_page(@posts, 'Load More', remote: true) %>"
+    "<%=j link_to_next_page(@posts, 'Load More', remote: true,
+      class: 'btn btn-primary btn-lg') %>"
   );
 <% end %>

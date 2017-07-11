@@ -1,9 +1,10 @@
 <%= form_for(post) do |f| %>
-  <div class="field">
-    <%= f.text_area :post, placeholder: "What are you thinking about?" %>
+  <div class="form-group">
+    <%= f.text_area :post, placeholder: "What are you thinking about?",
+      class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
