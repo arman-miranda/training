@@ -10,8 +10,10 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
 
-  validates :username, :first_name, :last_name,
+  validates :first_name, :last_name,
       :email, :department_id, presence: true
+  validates :username, format: { without: /\s/ ,
+      message: "shouldn't have white spaces"}
   validates :username, :email, uniqueness:true, allow_blank: true
   validates_attachment :avatar,
       content_type: { content_type: /\Aimage\/.*\z/ },
