@@ -11,7 +11,7 @@ var PostList = React.createClass({
           {post.user.first_name + " " + post.user.last_name}
           </a><br/>
           <a href={"/departments/"+post.user.department_id}>
-            {post.user.department.name}
+            {post.user.department ?  post.user.department.name : ""}
           </a><br/>
           <span className="publish-date">
             Posted at: {post.created_at}
