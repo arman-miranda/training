@@ -16,7 +16,7 @@ var UserList = React.createClass({
           </thead>
           <tbody>
             {this.props.users.map(function(user, i){
-              return <UserRow key={i} user={user}/>
+              return <UserRow key={i} user={user} />
             })}
           </tbody>
         </table>

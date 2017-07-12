@@ -4,7 +4,7 @@ var PostList = React.createClass({
     post = this.props.post
     return(
       <div className="row">
-
+        <hr />
         <div className="col-md-4">
           <img src={post.avatar_url}/><br/>
           <a href={"/users/"+post.user.id}>
@@ -21,7 +21,6 @@ var PostList = React.createClass({
         <div className="col-md-8 well">
           <p>{post.post}</p>
         </div>
-
       </div>
     );
   }
