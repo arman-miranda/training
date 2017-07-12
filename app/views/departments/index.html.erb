@@ -20,7 +20,7 @@
       <tr>
         <td><%= department.name %>
             <span class="badge">
-              <%= "#{department.users.count}"%>
+              <%= @department_badge[department.id] %>
             </span>
         </td>
 

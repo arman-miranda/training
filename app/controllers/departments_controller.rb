@@ -5,6 +5,8 @@ class DepartmentsController < ApplicationController
   # GET /departments.json
   def index
     @departments = Department.order(:name).page(params[:page])
+    @department_badge = Department.joins(:users).group(
+      'users.department_id').count
   end
 
   # GET /departments/1
