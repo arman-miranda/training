@@ -2,10 +2,10 @@
 <hr />
 <%= render 'form', post: @post %>
 <hr />
-<div class="infinite-post">
-  <%= render partial: 'posts', object: @posts %>
-</div>
 
+<%= render 'posts', posts: @posts%>
+
+</div>
 <div class="pagination" id="load-more-styling">
     <%= link_to_next_page(@posts, 'Load More', remote: true,
       class: "btn btn-primary btn-lg") %>

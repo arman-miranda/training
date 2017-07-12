@@ -9,7 +9,11 @@ var UserRow = React.createClass({
         <td>{user.position}</td>
         <td>{user.department ? user.department.name : ""}</td>
         <td>{user.email}</td>
-        <td><a href={"/users/"+user.id}>show</a></td>
+        <td>
+          <a href={"/users/"+user.id}>
+            <span className="glyphicon glyphicon-search"></span>
+          </a>
+        </td>
       </tr>
     )
   }
