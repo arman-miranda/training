@@ -1,1 +1,1 @@
-<%= react_component('MemberPosts', posts: @posts.as_json(include: {user: {include: :department}}, methods: [:avatar_url])) %>
+<%= react_component('MemberPosts', posts: posts.as_json(include: {user: {include: :department}}, methods: [:avatar_url]), prerender: true) %>

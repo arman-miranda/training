@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+Department.delete_all
+Post.delete_all
+
 (1..5).each  do  |i|
   #Create Departments
   name = Faker::Commerce.department
@@ -15,7 +19,7 @@ end
 (1..50).each do |i|
 
   # Create Users
-  username   = Faker::Name.unique.name
+  username   = Faker::Pokemon.unique.name
   password   = Faker::Ancient.god + ((1..1000).to_a).sample.to_s
   first_name = Faker::Name.first_name
   last_name  = Faker::Name.last_name

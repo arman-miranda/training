@@ -1,4 +1,7 @@
 var MemberPosts = React.createClass({
+  loadPage : function() {
+    return <h1>This</h1>
+  },
 
   render: function() {
     return(
@@ -8,6 +11,7 @@ var MemberPosts = React.createClass({
             <PostList key={i} post={post}/>
           );
         })}
+        <loadPage/>
       </div>
     );
 
