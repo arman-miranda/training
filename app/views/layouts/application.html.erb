@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="<%= root_path %>">Staff Listing</a>
         </div>
         <% if user_signed_in? %>
-        <div class="navbar-right">
-          <ul class="nav navbar-pills">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-pills navbar-right">
             <li class="dropdown">
               <%= link_to "#",
                     class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
@@ -59,51 +59,27 @@
       </div>
     </nav>
 
-    <div class="notice"><%= notice %></div>
+    <div class="container content">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <% if notice %>
+            <div class="alert alert-success notice">
+              <%= notice %>
+          <% elsif alert %>
+            <div class="alert alert-danger alert">
+              <%= alert %>
+          <% else %>
+            <div>
+          <% end %>
+          </div>
 
-    <div class="container">
-      <p class = "alert"><%= alert %></p>
-        <div class="col-md-9">
           <%= yield %>
         </div>
 
         <% if user_signed_in? %>
-          <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked" id ="fixed-sidebar">
-              <li class="<%= active_class(posts_path) %>">
-                <%= link_to posts_path,
-                  class: "list-group-item list-group-item-info" do %>
-                  <span class="glyphicon glyphicon-triangle-right">
-                  </span> Member's Post
-                <% end %>
-              </li>
-              <li class="<%= active_class(users_path) %>">
-                <%= link_to users_path,
-                class: "list-group-item list-group-item-info" do %>
-                <span class="glyphicon glyphicon-triangle-right">
-                  </span> See All Users
-                  <% end %>
-              </li>
-              <li class="<%= active_class(departments_path) %>">
-                <%= link_to departments_path,
-                  class: "list-group-item list-group-item-info" do %>
-                  <span class="glyphicon glyphicon-triangle-right">
-                  </span> List of Departments
-                  <% end %>
-              </li>
-
-              <li>
-                <%= link_to destroy_user_session_path,
-                method: :delete,
-                class: "list-group-item list-group-item-danger" do %>
-                  <span class="glyphicon glyphicon-off">
-                  </span> Logout
-                <% end %>
-              </li>
-            </ul>
+          <div class="col-md-2">
           </div>
          <% end %>
-      </div>
     </div>
 
   </body>

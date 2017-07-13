@@ -19,12 +19,12 @@
 
  .notice {
    text-align: center;
-   margin: auto;
+   margin:auto;
  }
 
  .alert {
    text-align: center;
-   margin: auto;
+   margin:auto;
  }
 
  #fixed-sidebar {
@@ -40,4 +40,8 @@
   margin: auto;
   padding: 10px;
   border: 1px solid #ccc;
+}
+
+.content {
+  margin-top: 50px;
 }

@@ -19,9 +19,11 @@
     <% @departments.each do |department| %>
       <tr>
         <td><%= department.name %>
-            <span class="badge">
-              <%= @department_badge[department.id] %>
-            </span>
+            <% if @department_badge[department.id] %>
+              <span class="badge">
+                <%= "#{@department_badge[department.id]} users" %>
+              </span>
+            <% end %>
         </td>
 
         <td><%= link_to department, class: "btn btn-primary" do %>

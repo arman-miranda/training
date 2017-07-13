@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: 'Successfully posted'
     else
-      redirect_to @post, notice: "Your input is invalid."
+      redirect_to @post, alert: "Your input is invalid."
     end
   end
 
