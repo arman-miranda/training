@@ -28,7 +28,7 @@
   <div class = "form-group">
     <%= f.label :department %>
     <%= f.select(:department_id,
-      Department.all.collect{|d| [ d.name, d.id] },
+      Department.all.order(:name).collect{|d| [ d.name, d.id] },
       { include_blank: false}, { class:"form-control" }) %>
   </div>
 
@@ -67,7 +67,7 @@
   <div class="form-group">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off",
-      class: "form-control" %>
+      required: true, class: "form-control" %>
   </div>
 
   <div class="text-center">

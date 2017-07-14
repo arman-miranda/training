@@ -48,6 +48,12 @@ gem 'ransack'
 #Image Processing feature
 gem 'paperclip', "~> 5.0.0"
 
+#Font Awesome
+gem 'font-awesome-rails'
+
+#Autosizing posts
+gem 'autosize'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -50,7 +50,7 @@
     <div class = "form-group">
       <%= f.label :department %>
       <%= f.select(:department_id,
-        Department.all.collect{|d| [ d.name, d.id] },
+        Department.all.order(:name).collect{|d| [ d.name, d.id] },
         { include_blank: false}, { class:"form-control" }) %>
     </div>
   </div>

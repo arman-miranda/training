@@ -35,7 +35,8 @@
         Position and Department
       </div>
       <div class="panel-body">
-        <%= "#{@user.position} under the #{@user.department.name} Department"%>
+        <%= "#{@user.position} under #{@user.department ?
+         @user.department.name : "no"} Department"%>
       </div>
     </div>
 

@@ -18,8 +18,10 @@ var PostList = React.createClass({
           </span>
         </div>
 
-        <div className="col-md-8 well">
-          <p>{post.post}</p>
+        <div className="col-md-8">
+          <div className="well">
+            <p>{post.post}</p>
+          </div>
         </div>
       </div>
     );
