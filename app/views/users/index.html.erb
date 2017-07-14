@@ -26,7 +26,7 @@
     <% end %>
   </div>
   <hr />
-
+  <%= page_entries_info @users %>
   <%= react_component("UserList",
     users: @users.as_json(include: :department)) %>
   <%= paginate @users %>

@@ -2,10 +2,6 @@
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
-<div class="row">
-  <div class="col-md-2">
-  </div>
-  <div class="col-md-10">
     <div class="form-group">
       <%= f.email_field :email, autofocus: true,
         class: "form-control", placeholder: "Email" %>
@@ -13,9 +9,11 @@
 
     <div class="form-group">
       <%= f.submit "Send me reset password instructions",
-        class: "btn btn-info" %>
+        class: "btn btn-primary" %>
+      <%= link_to "Back", new_user_session_path, class: "btn btn-default" %>
     </div>
-  </div>
+
+
 </div>
 
 <% end %>

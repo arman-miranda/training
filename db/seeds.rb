@@ -19,8 +19,8 @@ end
 (1..50).each do |i|
 
   # Create Users
-  username   = Faker::Pokemon.unique.name
-  password   = Faker::Ancient.god + ((1..1000).to_a).sample.to_s
+  username   = Faker::Pokemon.unique.name.delete(' ')
+  password   = Faker::Book.author.delete(' ') + ((1..1000).to_a).sample.to_s
   first_name = Faker::Name.first_name
   last_name  = Faker::Name.last_name
   email      = Faker::Internet.free_email("#{first_name} #{last_name}")

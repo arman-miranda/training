@@ -3,10 +3,10 @@ var PostList = React.createClass({
   render: function() {
     post = this.props.post
     return(
-      <div className="row">
+      <div className="media">
         <hr />
-        <div className="col-md-4">
-          <img src={post.avatar_url}/><br/>
+        <div className="media-left">
+          <img src={post.avatar_url} className="media-object"/><br/>
           <a href={"/users/"+post.user.id}>
           {post.user.first_name + " " + post.user.last_name}
           </a><br/>
@@ -18,9 +18,9 @@ var PostList = React.createClass({
           </span>
         </div>
 
-        <div className="col-md-8">
-          <div className="well">
-            <p>{post.post}</p>
+        <div className="media-body">
+          <div className="d-flex well">
+            <p >{post.post}</p>
           </div>
         </div>
       </div>
