@@ -11,7 +11,7 @@ var UserRow = React.createClass({
           <td>{user.email}</td>
           <td>
             <a href={"/users/"+user.id}>
-              <span className="glyphicon glyphicon-search"></span>
+              <i className="fa fa-eye"></i>
             </a>
           </td>
       </tr>
