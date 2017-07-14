@@ -11,7 +11,11 @@
   <div class="col-md-10">
     <div class="text-center">
       <%= image_tag @user.avatar.url(:thumb) %>
-    </div><br />
+    </div>
+    <br />
+    <div>
+      <%= link_to "Edit My Profile", edit_user_registration_path %>
+    </div>
     <div class="panel panel-primary text-center">
       <div class="panel-heading">
         Name

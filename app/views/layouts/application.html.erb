@@ -30,8 +30,8 @@
                       </span> Dashboard
               <%end%>
               <ul class="dropdown-menu">
-                <li class="<%= active_class(edit_user_registration_path) %>">
-                  <%= link_to edit_user_registration_path  do %>
+                <li class="<%= active_class(user_path(current_user)) %>">
+                  <%= link_to user_path(current_user)  do %>
                     <span class="glyphicon glyphicon-pencil">
                       </span> My Profile
                   <% end %>

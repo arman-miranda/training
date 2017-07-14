@@ -13,6 +13,9 @@ class UsersController < ApplicationController
   def show
   end
 
+  def profile
+    redirect_to current_user
+  end
   # GET /users/new
   # def new
   #   @user = User.new
