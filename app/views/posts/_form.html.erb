@@ -1,7 +1,7 @@
 <%= form_for(post) do |f| %>
   <div class="form-group">
     <%= f.text_area :post, placeholder: "What are you thinking about?",
-      class: "form-control", required: true %>
+      class: "form-control", required: true, maxlength: 1600 %>
   </div>
 
   <div class="actions">

@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates_attachment :avatar,
       content_type: { content_type: /\Aimage\/.*\z/ },
       size: { in: 0..2048.kilobytes}
+  validates :username, :email, length: {maximum: 191}
 
 
   def email_required?

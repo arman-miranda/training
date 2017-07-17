@@ -14,6 +14,6 @@ textarea {
   font-size: smaller;
 }
 
-#post-fix {
-  overflow: ellipsis;
+.media-body {
+  word-break: break-all;
 }
