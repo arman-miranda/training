@@ -63,16 +63,41 @@
   </div>
 
   <hr />
-
-  <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off",
-      required: true, class: "form-control" %>
-  </div>
-
+<!-- Modal Buttons -->
   <div class="text-center">
-    <%= f.submit "Update", class: "btn btn-primary btn-lg" %>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateUser">
+      Update
+    </button>
   </div>
+
+  <div class="modal fade" id="updateUser" tabindex="-1" role="dialog"
+   aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"
+          aria-hidden="true">&times;</button>
+          <h4 class="modal-title">
+            Please Enter Current Password for Confirmation
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off",
+              required: true, class: "form-control" %>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Cancel
+          </button>
+          <%= f.submit "Update", class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Modal buttons end-->
 <% end %>
 
 <hr />
