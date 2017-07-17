@@ -65,7 +65,7 @@
   <hr />
 <!-- Modal Buttons -->
   <div class="text-center">
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateUser">
+    <button type ="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateUser">
       Update
     </button>
   </div>
@@ -85,7 +85,7 @@
           <div class="form-group">
             <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
             <%= f.password_field :current_password, autocomplete: "off",
-              required: true, class: "form-control" %>
+              required: true, autofocus: true, class: "form-control" %>
           </div>
         </div>
         <div>
