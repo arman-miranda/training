@@ -4,7 +4,7 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
-    @departments = Department.order(:name).page(params[:page])
+    @departments = Department.order("LOWER(name)").page(params[:page])
     @department_badge = Department.joins(:users).group(
       'users.department_id').count
   end
