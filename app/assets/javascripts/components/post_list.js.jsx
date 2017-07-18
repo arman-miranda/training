@@ -1,4 +1,12 @@
 var PostList = React.createClass({
+  componentDidMount() {
+    $('[data-toggle="tooltip"]').tooltip();
+  },
+
+  componentDidUpdate(){
+    $('[data-toggle="tooltip"]').tooltip();
+  },
+
   handleDelete: function(e) {
     if(confirm("Are you sure?")){
       e.preventDefault();
@@ -15,7 +23,12 @@ var PostList = React.createClass({
   handleAuthentication(){
     if(post.user.id == current_user.id){
       return(
-        <button onClick={this.handleDelete}>DELETE</button>
+        <button className="btn btn-danger"
+          data-toggle="tooltip" data-placement="top"
+          title="Delete this post"
+          onClick={this.handleDelete}>
+          <i className="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
       );
     }
   },
@@ -36,12 +49,12 @@ var PostList = React.createClass({
           </a><br/>
           <span className="publish-date">
             Posted at: {post.created_at}
-          </span>
+          </span><br/>
+          {this.handleAuthentication()}
         </div>
 
         <div className="media-body">
           <p className="well">{post.post}</p>
-          {this.handleAuthentication()}
         </div>
       </div>
     );
