@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only:[:destroy]
   before_action :authenticate_user!
   def index
     @posts = Post.all.order(
@@ -7,6 +8,11 @@ class PostsController < ApplicationController
           params[:page]
         )
     @post = Post.new
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -18,7 +24,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html {redirect_to posts_url, notice: "Successfully Deleted"}
+    end
+  end
+
   private
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:post)

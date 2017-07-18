@@ -1,7 +1,28 @@
 var PostList = React.createClass({
+  handleDelete: function(e) {
+    if(confirm("Are you sure?")){
+      e.preventDefault();
+      $.ajax({
+          method: 'DELETE',
+          url: 'posts/' + this.props.post.id,
+          error: function(xhr, status, error) {
+            alert('Cannot delete requested record', error);
+          }
+        });
+     }
+  },
+
+  handleAuthentication(){
+    if(post.user.id == current_user.id){
+      return(
+        <button onClick={this.handleDelete}>DELETE</button>
+      );
+    }
+  },
 
   render: function() {
-    post = this.props.post
+    post = this.props.post;
+    current_user = this.props.current_user;
     return(
       <div id="post-fix" className="media">
         <hr />
@@ -20,6 +41,7 @@ var PostList = React.createClass({
 
         <div className="media-body">
           <p className="well">{post.post}</p>
+          {this.handleAuthentication()}
         </div>
       </div>
     );

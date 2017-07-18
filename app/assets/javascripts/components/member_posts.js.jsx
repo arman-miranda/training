@@ -1,17 +1,16 @@
 var MemberPosts = React.createClass({
-  loadPage : function() {
-    return <h1>This</h1>
-  },
-
   render: function() {
     return(
       <div>
-        {this.props.posts.map(function(post, i){
+        {this.props.posts.map((post, i) => {
           return(
-            <PostList key={i} post={post}/>
+            <PostList current_user={this.props.current_user}
+                      key={i}
+                      post={post} />
           );
-        })}
-        <loadPage/>
+        })};
+
+
       </div>
     );
 

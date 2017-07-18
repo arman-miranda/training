@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   validates :post, presence: true
-  
+
 
   def as_json(options={})
     super.merge(
