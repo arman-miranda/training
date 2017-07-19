@@ -1,6 +1,9 @@
 var PostList = React.createClass({
   componentDidMount() {
     $('[data-toggle="tooltip"]').tooltip();
+    if($('.well').height() > 186){
+      console.log("Test");
+    }
   },
 
   componentDidUpdate(){
